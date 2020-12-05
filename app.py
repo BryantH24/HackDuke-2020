@@ -18,4 +18,4 @@ def predict():
     return predictions
 
 if __name__ == "__main__":
-    app.run(threaded=True, port=5000)
+    app.run(threaded=True)

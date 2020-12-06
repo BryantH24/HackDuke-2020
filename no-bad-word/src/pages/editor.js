@@ -86,7 +86,7 @@ export default function Editor() {
 
   return (
     <Container fluid className="editor-container">
-      <Container className="white-background-container">
+      <Container className="background-container">
         <HighlightWithinTextarea
           value={state}
           highlight={highlight}

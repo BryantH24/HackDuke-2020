@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.white-background-container {
+.background-container {
   height: 85%;
   background-color: white;
   border-radius: 68px;
@@ -23,48 +23,10 @@
 .input-box {
   border: 1px solid #fbcff8 !important;
   color: #3e3e3e;
-  height: 500px;
-  width: 600px;
+  height: 550px;
+  width: 950px;
 }
 
-Button.scan-button {
-  background: #735dfe;
-  border: none;
-  border-radius: 44.5px;
-  font-size: 18px;
-  color: #fff;
-  text-align: left;
-  margin-top: 10px;
-  width: 140px;
-  height: 40px;
-  text-align: center;
-  font-size: 18px;
-  float: right;
-}
-
-Button.scan-button:hover {
-  background-color: #fb5eed;
-  color: #fff;
-}
-
-Button.scan-button:focus {
-  background: #735dfe;
-  border: none;
-  color: #fff;
-  outline: none;
-  box-shadow: none;
-}
-
-Button.scan-button:visited {
-  background: #735dfe;
-  border: none;
-  color: #fff;
-}
-
-.highlight-row {
+.text-area-container {
   border: 1px solid red;
-}
-
-.highlight-col {
-  border: 1px solid blue;
 }

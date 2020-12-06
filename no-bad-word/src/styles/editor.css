@@ -1,0 +1,65 @@
+.editor-container {
+  display: flex;
+  background-image: linear-gradient(to bottom left, #fbcef8, #e3ddfe);
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.white-background-container {
+  height: 85%;
+  background-color: white;
+  border-radius: 68px;
+}
+
+.text-area-container {
+  padding: 30px;
+  height: 100%;
+}
+
+.text-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.input-box {
+  outline: none !important;
+  text-decoration: none !important;
+  border: 1px solid #fbcff8 !important;
+  background-color: blue;
+  color: #3e3e3e;
+}
+
+Button.scan-button {
+  background: #735dfe;
+  border: none;
+  border-radius: 44.5px;
+  font-size: 18px;
+  color: #fff;
+  text-align: left;
+  margin-top: 10px;
+  width: 140px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  float: right;
+}
+
+Button.scan-button:hover {
+  background-color: #fb5eed;
+  color: #fff;
+}
+
+Button.scan-button:focus {
+  background: #735dfe;
+  border: none;
+  color: #fff;
+  outline: none;
+  box-shadow: none;
+}
+
+Button.scan-button:visited {
+  background: #735dfe;
+  border: none;
+  color: #fff;
+}

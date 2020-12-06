@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Router, Switch, Route } from "react-router-dom";
 import history from "./history";
 import Homepage from "./pages/homepage";
-import editor from "./pages/editor";
+import Editor from "./pages/editor";
 
 // need to add routes for the rest of pages once merged to master
 

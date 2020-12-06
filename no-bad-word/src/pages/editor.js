@@ -1,15 +1,38 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Form, Button } from "react-bootstrap";
 import "../styles/editor.css";
+import axios from "axios";
 
 export default function Editor() {
   const [state, setState] = useState("");
+  const [counter, setCounter] = useState(0);
 
-  const handleChange = (event) => {
-    setState({
-      ...state,
-      [event.target.name]: event.target.value,
-    });
+  const handleChange = async (event) => {
+    setState(event.target.value);
+    setCounter(counter + 1);
+
+    if (counter >= 5) {
+      setCounter(0);
+      const parsedSentences = state.split(".");
+      const result = [];
+      var example;
+      for (example of parsedSentences) {
+        console.log(example);
+        await axios
+          .post("https://hackdook-udtyuwqxja-ue.a.run.app/label", {
+            text: example,
+          })
+          .then((res) => {
+            result.push(res.data.label);
+            console.log(res);
+          })
+          .catch((err) => {
+            console.log(err);
+            console.log("Error evaluating sentence");
+          });
+      }
+      console.log(result);
+    }
   };
 
   const handleScan = (event) => {

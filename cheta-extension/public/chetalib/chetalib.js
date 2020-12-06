@@ -1,6 +1,6 @@
 
 function init() {
-  console.log("Initializing ChETA");
+  console.log("Initializing SPCH");
   var link = document.createElement('link');
   link.setAttribute('rel', 'stylesheet');
   link.setAttribute('type', 'text/css');
@@ -8,12 +8,12 @@ function init() {
   document.head.appendChild(link);
 
   if(!config.code) {
-    console.log("Error loading ChETA: Unique code not found")
+    console.log("Error loading SPCH: Unique code not found")
     return;
   }
   var inputs = getInputsByValue(config.code);
   if(inputs.length == 0) {
-    console.log("Error loading ChETA: Input not found")
+    console.log("Error loading SPCH: Input not found")
     return;
   }
   var text = inputs[0].value.split(config.code).reverse()[0];
@@ -22,7 +22,7 @@ function init() {
   inputs[0].addEventListener('input', (e) => {
     var inputs = getInputsByValue(config.code);
     if(inputs.length == 0) {
-      console.log("Error loading ChETA: Input not found");
+      console.log("Error loading SPCH: Input not found");
       return;
     }
     var text = inputs[0].value.split(config.code).reverse()[0];
@@ -39,7 +39,7 @@ function init() {
     }
   });
   const div = document.createElement('div');
-  var finalHTML = '<div id="cheta-flt-dv"><p class="cheta-flt-p">ChETA</p>';
+  var finalHTML = '<div id="cheta-flt-dv"><p class="cheta-flt-p">SPCH</p>';
   finalHTML += '<p class="cheta-pfnt">Words: <span id="cheta-data-wordcount">'+text.split(" ").length+'</span></p>';
   finalHTML += '<p class="cheta-pfnt">Chars: <span id="cheta-data-charcount">'+text.length+'</span></p>';
   if(config.priceperword) {

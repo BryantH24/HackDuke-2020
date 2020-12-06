@@ -1,18 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.6e096779.chunk.css",
-    "main.js": "/static/js/main.fa16481d.chunk.js",
+    "main.css": "/static/css/main.245e65df.chunk.css",
+    "main.js": "/static/js/main.19ee76a6.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.e71a846f.js",
-    "static/js/2.657b1a3d.chunk.js": "/static/js/2.657b1a3d.chunk.js",
+    "static/js/2.b9cb062a.chunk.js": "/static/js/2.b9cb062a.chunk.js",
     "index.html": "/index.html",
-    "precache-manifest.5192be5a763a6cc6ae445d2ca07041dd.js": "/precache-manifest.5192be5a763a6cc6ae445d2ca07041dd.js",
+    "precache-manifest.cac2e3960025d11eaf6e4e63f88452a3.js": "/precache-manifest.cac2e3960025d11eaf6e4e63f88452a3.js",
     "service-worker.js": "/service-worker.js",
-    "static/js/2.657b1a3d.chunk.js.LICENSE.txt": "/static/js/2.657b1a3d.chunk.js.LICENSE.txt"
+    "static/js/2.b9cb062a.chunk.js.LICENSE.txt": "/static/js/2.b9cb062a.chunk.js.LICENSE.txt",
+    "static/media/heart.svg": "/static/media/heart.eebcc396.svg",
+    "static/media/line.svg": "/static/media/line.4152a495.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.e71a846f.js",
-    "static/js/2.657b1a3d.chunk.js",
-    "static/css/main.6e096779.chunk.css",
-    "static/js/main.fa16481d.chunk.js"
+    "static/js/2.b9cb062a.chunk.js",
+    "static/css/main.245e65df.chunk.css",
+    "static/js/main.19ee76a6.chunk.js"
   ]
 }

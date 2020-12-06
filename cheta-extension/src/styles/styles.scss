@@ -4,20 +4,44 @@ html{
 }
 body{
   margin: 0px;
-  height: 400px;
+  height: 270px;
   width: 280px;
-  font-family: 'Special Elite', sans-serif;
-  background: #1D1D1D;
+  font-family: 'Ubuntu', sans-serif;
+  background: #f5f5f5;
+
+  .spch-text {
+    color: #735dfe;
+    font-weight: bold;
+    font-size: 42px;
+    display: inline-block;
+    position: absolute;
+    padding-left: 20px;
+  }
+
+  .inner-spch-text {
+    color: #fb5eed;
+  }
+
+  .heart-image {
+    height: 60px;
+    width: 60px;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .line {
+    padding-top: 15px;
+  }
 
   .header {
     width: 280px;
     height: 50px;
     margin: 0px;
-    background-color: #1D1D1D;
+    background-color: #fff;
     padding: 12px 0px;
 
     h1 {
-      font-family: 'Special Elite';
+      font-family: 'Ubuntu';
       font-size: 28px;
       opacity: 0.9;
       margin: 0px 4px 0px 4px;
@@ -30,14 +54,14 @@ body{
 
     p {
       margin: 0px 4px;
-      font-family: 'Special Elite';
+      font-family: 'Ubuntu';
       font-weight: 400;
       font-size: 14px;
     }
 
     input, #priceperwordInput {
       text-align: center;
-      font-family: 'Special Elite';
+      font-family: 'Ubuntu';
       font-weight: 400;
       font-size: 14px;
     }
@@ -59,7 +83,7 @@ body{
   p {
     font-family: Avenir-Book;
     font-size: 14px;
-    color: #E1E1E1;
+    color: #3E3E3E;
     text-align: left;
     line-height: 3px;
     padding-left: 40px;
@@ -117,7 +141,7 @@ body{
     -ms-transform: translateX(26px);
     transform: translateX(26px);
   }
-  
+
   /* Rounded sliders */
   .slider.round {
     border-radius: 34px;
@@ -130,7 +154,7 @@ body{
     width: 280px;
     height: 40px;
     margin: 0px;
-    background-color: #1D1D1D;
+    background-color: #fff;
     padding: 6px 0px;
     text-align: center;
 

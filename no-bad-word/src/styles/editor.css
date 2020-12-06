@@ -27,6 +27,6 @@
   width: 950px;
 }
 
-.text-area-container {
-  border: 1px solid red;
+.red {
+  background-color: red;
 }

@@ -17,7 +17,6 @@ export default function Editor() {
       })
       .then((res) => {
         const label = res.data.label;
-        console.log(label.length);
         result.push(label);
       })
       .catch((err) => {
@@ -28,42 +27,23 @@ export default function Editor() {
   };
 
   const indexInput = (str, markerList) => {
-    var sentenceIndices = [];
-    for (var i = 0; i < str.length; i++) {
-      if (str[i] == ".") {
-        sentenceIndices.push(i);
+    const parsedSentences = str.split(".");
+    var result = [];
+    for (var i = 0; i < parsedSentences.length; i++) {
+      if (markerList[i] == 1) {
+        result.push({ highlight: parsedSentences[i], className: "yellow" });
+      } else if (markerList[i] == 0) {
+        result.push({ highlight: parsedSentences[i], className: "red" });
       }
     }
-    var highlightSections = [];
-    for (var i = 0; i < sentenceIndices.length; i++) {
-      if (markerList[i][0] == 0 || markerList[i][0] == 1) {
-        if (i == 0) {
-          highlightSections.push([0, sentenceIndices[i]]);
-        } else {
-          highlightSections.push([
-            sentenceIndices[i - 1] + 1,
-            sentenceIndices[i],
-          ]);
-        }
-      }
-    }
-    if (
-      sentenceIndices[sentenceIndices.length - 1] < str.length - 1 &&
-      markerList[markerList.length - 1] < 2
-    ) {
-      highlightSections.push([
-        sentenceIndices[sentenceIndices.length - 1],
-        str.length - 1,
-      ]);
-    }
-    setHighlight(highlightSections);
+    setHighlight(result);
   };
 
   const handleChange = async (event) => {
     setState(event.target.value);
     setCounter(counter + 1);
 
-    if (counter >= 5) {
+    if (counter >= 0) {
       setCounter(0);
       const parsedSentences = state.split(".");
       const result = [];
@@ -76,12 +56,6 @@ export default function Editor() {
       console.log(result);
       console.log(highlight);
     }
-  };
-
-  const handleScan = (event) => {
-    event.preventDefault();
-    // Some API Call
-    const parsedInput = state.split(".");
   };
 
   return (

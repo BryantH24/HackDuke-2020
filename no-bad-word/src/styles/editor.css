@@ -10,11 +10,9 @@
   height: 85%;
   background-color: white;
   border-radius: 68px;
-}
-
-.text-area-container {
-  padding: 30px;
-  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .text-input:focus {
@@ -23,11 +21,10 @@
 }
 
 .input-box {
-  outline: none !important;
-  text-decoration: none !important;
   border: 1px solid #fbcff8 !important;
-  background-color: blue;
   color: #3e3e3e;
+  height: 500px;
+  width: 600px;
 }
 
 Button.scan-button {
@@ -62,4 +59,12 @@ Button.scan-button:visited {
   background: #735dfe;
   border: none;
   color: #fff;
+}
+
+.highlight-row {
+  border: 1px solid red;
+}
+
+.highlight-col {
+  border: 1px solid blue;
 }

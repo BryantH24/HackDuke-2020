@@ -25,11 +25,10 @@ import string
 import re
 
 
-
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer as VS
 from textstat.textstat import *
 
-nltk.download('stopwords')
+
 stopwords=stopwords = nltk.corpus.stopwords.words("english")
 
 other_exclusions = ["#ff", "ff", "rt"]
@@ -39,6 +38,8 @@ sentiment_analyzer = VS()
 
 stemmer = PorterStemmer()
 
+nltk.download('stopwords')
+nltk.download('punkt')
 
 def preprocess(text_string):
     """
@@ -224,9 +225,14 @@ def get_tweets_predictions(tweets, perform_prints=True):
     print len(tweets), " tweets to classify"
 
     print "Loading trained classifier... "
+    # model = joblib.load('./HateSpeechClassificationModel/final_model.pkl')
     model = joblib.load('final_model.pkl')
 
     print "Loading other information..."
+    # tf_vectorizer = joblib.load('./HateSpeechClassificationModel/final_tfidf.pkl')
+    # idf_vector = joblib.load('./HateSpeechClassificationModel/final_idf.pkl')
+    # pos_vectorizer = joblib.load('./HateSpeechClassificationModel/final_pos.pkl')
+
     tf_vectorizer = joblib.load('final_tfidf.pkl')
     idf_vector = joblib.load('final_idf.pkl')
     pos_vectorizer = joblib.load('final_pos.pkl')
@@ -242,19 +248,39 @@ def get_tweets_predictions(tweets, perform_prints=True):
 
     return predicted_class
 
+import numpy as np
+from flask import Flask, request, jsonify
+from cass import predicted, user_generated
 
-if __name__ == '__main__':
-    print "Loading data to classify..."
+app = Flask(__name__)
 
-    #Tweets obtained here: https://github.com/sashaperigo/Trump-Tweets
-    y = 10
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
 
-    df = pd.read_csv('trump_tweets.csv')
-    trump_tweets = df.Text
-    trump_tweets = [x for x in trump_tweets if type(x) == str]
-    print(trump_tweets[y])
-    trump_predictions = get_tweets_predictions([trump_tweets[y]])
-    print(trump_predictions)
+@app.route('/predict', methods=['POST'])
+def predict():
+
+    examples = [x for x in request.json['text']]
+    final_examples = [np.array(examples)]
+    predictions = get_tweets_predictions(examples)
+
+    for i in range(len(predictions)):
+        predicted(examples[i], predictions[i])
+    return jsonify( {'predictions' : predictions.tolist()})
+
+if __name__ == "__main__":
+    app.debug = True
+    app.run()
+
+
+# if __name__ == '__main__':
+#     print "Loading data to classify..."
+#
+#     #Tweets obtained here: https://github.com/sashaperigo/Trump-Tweets
+#
+#     trump_predictions = get_tweets_predictions(['Today has been a pretty swell day'])
+#     print(trump_predictions)
     #
     # print "Printing predicted values: "
     # for i,t in enumerate(trump_tweets):
